@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = state => {
   // return an object of redux store data
   // that you'd like available in your component
-  return {...state};
+  return {};
 }
 
 const mapDispatchToProps = dispatch => {
