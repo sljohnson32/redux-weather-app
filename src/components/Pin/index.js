@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const App = () => {
+const Pin = () => {
   return (
-    <div>Hey!</div>
+    <div>Pin</div>
   )
 }
 
-export default App;
+export default Pin;
