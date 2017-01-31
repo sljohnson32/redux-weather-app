@@ -1,21 +1,8 @@
-const exampleReducer = (state = {}, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux';
+import settingsReducer from './settings-reducer'
 
-export default exampleReducer;
+const rootReducer = combineReducers({
+  settingsReducer
+})
 
-
-// const exampleReducer = (state = [], action) => {
-//   switch (action.type) {
-//     case 'RECIEVE_FORECAST':
-//       return [...state, action.data]
-//       break
-//     default:
-//       return state
-//   }
-// }
-//
-// export default exampleReducer;
+export default rootReducer;

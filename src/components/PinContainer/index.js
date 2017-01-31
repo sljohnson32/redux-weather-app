@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+// import { connect } from 'react-redux';
 
 const PinContainer = () => {
   return (
-    <div>pin container</div>
+    <div>PinContainer</div>
   )
 }
 
