@@ -3,7 +3,7 @@ import App from '../components/App'
 import { fetchLocation } from '../actions'
 
 const mapStateToProps = (state) => {
-  console.log('???', state)
+  console.log('app Reducer', state)
   return {
     data: state.appReducer
   }

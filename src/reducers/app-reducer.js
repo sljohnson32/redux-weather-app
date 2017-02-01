@@ -1,7 +1,7 @@
 const app = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_LOCATION':
-      return action.data
+      return action.data;
     default:
       return state
   }
