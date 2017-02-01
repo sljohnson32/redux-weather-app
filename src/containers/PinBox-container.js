@@ -1,4 +1,4 @@
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 // import App from '../components/App'
 //
 // const mapStateToProps = () => {
@@ -21,8 +21,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return null;
+  return {};
   // Some code to connect Component to app Actions and therefore Reducers within Redux Store
 }
 
-export default connect(mapStateToProps, null)(PinContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(PinContainer)

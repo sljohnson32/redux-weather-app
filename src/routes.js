@@ -1,8 +1,8 @@
 import React from 'react';
-import { Router, Route, IndexRoute } from 'react-router';
-import App from './components/App';
-import PinBox from './components/PinBox';
-import Settings from './components/Settings';
+import { Route, IndexRoute } from 'react-router';
+import App from './containers/App-container';
+import PinBox from './containers/PinBox-container';
+import Settings from './containers/Settings-container';
 
 
 const Routes = (

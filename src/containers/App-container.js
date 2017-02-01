@@ -1,8 +1,20 @@
 import { connect } from 'react-redux';
 import App from '../components/App'
+import { fetchLocation } from '../actions'
 
 const mapStateToProps = (state) => {
-  return state;
+  console.log('???', state)
+  return {
+    data: state.appReducer
+  }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchLocation: (data) => {
+      dispatch(fetchLocation(data))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
