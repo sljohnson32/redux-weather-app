@@ -1,13 +1,14 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import Header from '../Header';
 import Settings from '../../containers/Settings';
 
-const App = () => {
+const App = (props) => {
   return (
     <div>
       <Header />
-      <Settings />
+      {props.children}
     </div>
   )
 }
