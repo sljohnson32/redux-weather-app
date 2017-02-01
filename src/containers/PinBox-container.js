@@ -13,7 +13,7 @@
 //
 // export default connect(mapStateToProps)(App);
 
-import PinContainer from '../components/PinContainer'
+import PinContainer from '../components/PinBox'
 
 const mapStateToProps = (state) => {
   return state;
