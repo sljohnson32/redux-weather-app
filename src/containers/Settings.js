@@ -4,7 +4,9 @@ import Settings from '../components/Settings';
 
 const mapStateToProps = (state) => {
   console.log('hey', state)
-  return state;
+  return {
+    text: state.settingsReducer
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {

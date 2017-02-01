@@ -10,6 +10,7 @@ export default class Settings extends Component {
   render() {
     const { text, handleClick } = this.props;
     const { cityInput } = this.state;
+    console.log('text props', text)
     return (
       <div>
         <h2>Settings</h2>
