@@ -7,10 +7,10 @@ import Header from '../Header';
 export default class App extends Component {
 
   componentDidMount() {
-    // console.log(this.props)
-    // console.log(this.props)
-    // const { fetchLocation } = this.props
-    // fetchLocation()
+    const { fetchLocation } = this.props
+    navigator.geolocation.getCurrentPosition( (position) => {
+      fetchLocation({ lat: position.coords.latitude, long: position.coords.longitude})
+    });
   }
 
   render() {
