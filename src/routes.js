@@ -4,13 +4,14 @@ import App from './components/App';
 import PinContainer from './components/PinContainer';
 import Settings from './components/Settings';
 
-const Routes = (props) => (
-  <Router {...props}>
+
+const Routes = (
+  <Route>
     <Route path="/" component={App}>
       <IndexRoute component={PinContainer} />
       <Route path='settings' component={Settings} />
     </Route>
-  </Router>
+  </Route>
 );
 
 export default Routes;
