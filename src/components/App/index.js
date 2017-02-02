@@ -7,7 +7,6 @@ import Header from '../Header';
 export default class App extends Component {
 
   componentDidMount() {
-
     const { fetchLocation, fetchSun, fetchWeather } = this.props
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude
@@ -33,7 +32,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header {...this.props}/>
         {this.props.children}
       </div>
     )

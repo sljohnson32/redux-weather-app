@@ -1,11 +1,11 @@
-const app = (state = [], action) => {
+const app = (state = {}, action) => {
   switch (action.type) {
     case 'FETCH_LOCATION':
-      return [action.data];
+      return action.data;
     case 'FETCH_SUN':
-      return [...state, action.time];
+      return Object.assign({...state}, action.time);
     case 'FETCH_WEATHER':
-      return [...state, action.location];
+      return Object.assign({...state}, action.location);
     default:
       return state
   }
