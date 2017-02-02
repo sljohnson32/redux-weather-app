@@ -11,7 +11,7 @@ const Header = (props) => {
         {/* <p>{props.data.lat}</p> */}
         {props.data.current_observation  ?
           <div className='header-text-container'>
-          <p className='current'>Current forecast for <p className='city'>{props.data.current_observation.display_location.city}</p>: </p>
+          <p className='current'>Current forecast for <p className='city'>{props.data.current_observation.display_location.city} : {props.data.current_observation.temperature_string}</p> </p>
         </div>
            : <p>not loaded yet!</p>}
       </div>
