@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import settingsReducer from './settings-reducer'
+import PinForecastData from './settings-reducer'
 import appReducer from './app-reducer'
 
 const rootReducer = combineReducers({
-  settingsReducer,
+  PinForecastData,
   appReducer
 })
 

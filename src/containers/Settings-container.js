@@ -4,7 +4,7 @@ import { receiveForecast } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
-    text: state.settingsReducer
+    data: state.PinForecastData
   }
 }
 
