@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './app-style.css'
+import moment from 'moment';
 // import { connect } from 'react-redux';
 
 import Header from '../Header';
@@ -37,11 +38,19 @@ export default class App extends Component {
     let state = array[1].toString().split(' ').join('_');
     return `${state}/${city}`;
   }
+
   getForecast(location, func) {
     fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/conditions/q/${this.splitLocation(location)}.json`)
     .then((response) => response.json())
     .then((data) => func(data))
   }
+
+  checkDaytime() {
+    let sunrise = moment.parseZone(`${this.props.sunrise.sunrise}`).local().format('HH:mm:ss')
+     let now = moment().format('HH:mm:ss')
+     let sunset = moment.parseZone(`${this.props.sunrise.sunset}`).local().format('HH:mm:ss')
+     if (now > sunrise && now < sunset){console.log("It's fuckin' daytime, baby!")}
+    }
 
   render() {
     return (
