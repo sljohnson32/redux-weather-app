@@ -7,6 +7,8 @@ const Header = (props) => {
     <div>
       <h1>Header</h1>
       <p>{props.data.lat}</p>
+      {props.data.location ? <p>{props.data.location.city}</p> : <p>not loaded yet!</p>}
+
     </div>
   )
 }

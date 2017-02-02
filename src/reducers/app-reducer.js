@@ -1,4 +1,4 @@
-const app = (state = {}, action) => {
+const app = (state = {lat: '', long: '', results: {}, location: {}}, action) => {
   switch (action.type) {
     case 'FETCH_LOCATION':
       return action.data;
