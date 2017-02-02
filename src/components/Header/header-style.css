@@ -1,0 +1,33 @@
+h1 {
+  font-size: 100px;
+  font-weight: 100;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 10px;
+  text-align: center;
+}
+
+.header {
+  background-color: #FFFFFF;
+  padding: 10px 0;
+}
+
+.header-container {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid black;
+}
+
+.header-text-container {
+  margin-top: -10px;
+  height: 70px;
+}
+
+.current {
+  margin-left: 30px;
+}
+
+.city, .current {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+}
