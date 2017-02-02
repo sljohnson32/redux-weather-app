@@ -8,8 +8,15 @@ export default class Settings extends Component {
     }
   }
 
+  splitLocation(location) {
+    let array = location.split(',');
+    let city = array[0];
+    let state = array[1].toString().split(' ').join('_');
+    return `${state}/${city}`;
+  }
+
   getForecast(location, func) {
-    fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/geolookup/q/${location}.json`)
+    fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/geolookup/q/${this.splitLocation(location)}.json`)
     .then((response) => response.json())
     .then((data) => func(data))
   }
