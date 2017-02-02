@@ -8,10 +8,23 @@ export default class Settings extends Component {
       cityInput: ''
     }
   }
+
+  splitLocation(location) {
+    let array = location.split(',');
+    let city = array[0];
+    let state = array[1].toString().split(' ').join('_');
+    return `${state}/${city}`;
+  }
+
+  getForecast(location, func) {
+    fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/conditions/q/${this.splitLocation(location)}.json`)
+    .then((response) => response.json())
+    .then((data) => func(data))
+  }
+
   render() {
-    const { text, handleClick } = this.props;
+    const { text, receiveForecast } = this.props;
     const { cityInput } = this.state;
-    console.log('text props', text)
     return (
       <div>
         <p className='settings-p-tag'>Settings</p>
@@ -23,7 +36,7 @@ export default class Settings extends Component {
         />
         <button
           className='search-btn'
-          onClick={ () => handleClick(cityInput) }
+          onClick={ () => this.getForecast(cityInput, receiveForecast) }
         >BUTTON</button>
         <div>{text}</div>
       </div>

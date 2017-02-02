@@ -8,18 +8,27 @@
 //   // return fetch API call
 // };
 
-export const addPin = (text) => {
+// const fetchLocationApi = () => {
+// return (dispatch) => {
+// api call
+// from that response you'll dispatch(fetchLoaction(data))
+//}
+//}
+
+// export const addPin = (text) => {
+//   return {
+//     type: 'ADD_PIN',
+//     text
+//   }
+// }
+
+export const receiveForecast = (forecastData) => {
   return {
-    type: 'ADD_PIN',
-    text
+    type: 'RECEIVE_FORECAST',
+    forecastData
   }
 }
-// const fetchLocationApi = () => {
-  // return (dispatch) => {
-  // api call
-  // from that response you'll dispatch(fetchLoaction(data))
-//}
-//}
+
 export const fetchLocation = (data) => {
   return {
     type: 'FETCH_LOCATION',
