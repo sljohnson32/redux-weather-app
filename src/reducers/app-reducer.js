@@ -1,9 +1,9 @@
 const app = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_LOCATION':
-      return action.data;
+      return [action.data];
     case 'FETCH_SUN':
-      return action.data;
+      return [...state, action.time];
     default:
       return state
   }

@@ -22,9 +22,9 @@ export const fetchLocation = (data) => {
   }
 };
 
-export const fetchSun = (data) => {
+export const fetchSun = (time) => {
   return {
     type: 'FETCH_SUN',
-    data
+    time
   }
 }
