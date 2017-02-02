@@ -21,3 +21,10 @@ export const fetchLocation = (data) => {
     data
   }
 };
+
+export const fetchSun = (time) => {
+  return {
+    type: 'FETCH_SUN',
+    time
+  }
+}
