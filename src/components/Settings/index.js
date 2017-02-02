@@ -16,7 +16,7 @@ export default class Settings extends Component {
   }
 
   getForecast(location, func) {
-    fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/geolookup/q/${this.splitLocation(location)}.json`)
+    fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/conditions/q/${this.splitLocation(location)}.json`)
     .then((response) => response.json())
     .then((data) => func(data))
   }
