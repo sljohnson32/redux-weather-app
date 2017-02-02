@@ -7,10 +7,16 @@ export default class Settings extends Component {
       cityInput: ''
     }
   }
+
+  getForecast(location, func) {
+    fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/geolookup/q/${location}.json`)
+    .then((response) => response.json())
+    .then((data) => func(data))
+  }
+
   render() {
-    const { text, handleClick } = this.props;
+    const { text, receiveForecast } = this.props;
     const { cityInput } = this.state;
-    console.log('text props', text)
     return (
       <div>
         <h2>Settings</h2>
@@ -20,7 +26,7 @@ export default class Settings extends Component {
           placeholder='Enter a city'
         />
         <button
-          onClick={ () => handleClick(cityInput) }
+          onClick={ () => this.getForecast(cityInput, receiveForecast) }
         >BUTTON</button>
         <div>{text}</div>
       </div>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from '../components/App'
-import { fetchLocation, fetchSun, fetchWeather } from '../actions'
+import { fetchLocation, fetchSun, fetchWeather, rece } from '../actions'
 
 const mapStateToProps = (state) => {
   console.log('app Reducer', state)
