@@ -1,9 +1,11 @@
-const settings = (state = '', action) => {
-  switch (action.type) {
-    case 'ADD_PIN':
-      return action.text
+const settings = (state = [], action) => {
+  switch ('settings action', action.type) {
+    case 'RECEIVE_FORECAST':
+      let newData = action.forecastData;
+      state.push(newData);
+      return state;
     default:
-      return state
+      return state;
   }
 }
 

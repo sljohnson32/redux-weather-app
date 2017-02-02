@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { addPin } from '../actions';
 import Settings from '../components/Settings';
+import { receiveForecast } from '../actions';
 
 const mapStateToProps = (state) => {
-  console.log('hey', state)
+  console.log('settingsReducer', state)
   return {
     text: state.settingsReducer
   }
@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleClick: (text) => {
-      dispatch(addPin(text));
+    receiveForecast: (data) => {
+      dispatch(receiveForecast(data))
     }
   }
 }
