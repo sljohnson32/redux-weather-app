@@ -1,0 +1,35 @@
+.settings-p-tag {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 26px;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+}
+
+input {
+  height: 25px;
+  background: #FFFFFF;
+  border: 1px solid black;
+  display: inline-block;
+  width: 140px;
+}
+
+.search-btn {
+  background: #FFFFFF;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: inline-block;
+  font-family: 'Quicksand', sans-serif;
+  height: 30px;
+  margin-left: 10px;
+  outline-color: black;
+  width: 80px;
+}
+
+.search-btn:hover {
+  background: gray;
+}

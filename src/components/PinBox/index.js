@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router';
+import './pinbox-style.css'
 // import { connect } from 'react-redux';
 
-const PinContainer = () => {
+const PinBox = () => {
   return (
-    <div>
-      <h2>PinContainer</h2>
-      <button><Link to='/settings'>Edit Pinned Cities</Link></button>
+    <div className='pinbox-container'>
+      <p className='pinbox-title'>Favorites</p>
+      <div className='card-container'>
+        <div className='one'></div>
+        <div className='two'></div>
+        <div className='three'></div>
+        <button className='edit-btn'><Link to='/settings'>Edit Pinned Cities</Link></button>
+      </div>
     </div>
   )
 }
 
-export default PinContainer;
+export default PinBox;
