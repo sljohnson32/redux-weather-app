@@ -3,7 +3,6 @@ import Settings from '../components/Settings';
 import { receiveForecast } from '../actions';
 
 const mapStateToProps = (state) => {
-  console.log('settingsReducer', state)
   return {
     text: state.settingsReducer
   }
