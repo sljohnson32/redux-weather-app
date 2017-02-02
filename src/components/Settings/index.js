@@ -15,10 +15,15 @@ export default class Settings extends Component {
     return `${state}/${city}`;
   }
 
+  filterData(data) {
+    return data
+  }
+
   getForecast(location, func) {
     fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/conditions/q/${this.splitLocation(location)}.json`)
     .then((response) => response.json())
-    .then((data) => func(data))
+    .then((data) => this.filterData(data))
+    .then((cleanData) => func(cleanData))
   }
 
   render() {
