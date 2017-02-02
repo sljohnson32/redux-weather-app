@@ -20,13 +20,26 @@ export default class App extends Component {
   fetchCurrentCity(lat, long, fetchWeather) {
     fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/geolookup/q/${lat},${long}.json`)
     .then((response) => response.json())
-    .then((data) => fetchWeather(data))
+    .then((data) => this.getForecast(`${data.location.city}, ${data.location.state}`, fetchWeather))
   }
 
   fetchSunAPI(lat, long, fetchSun) {
     fetch(`http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}`)
     .then((response) => response.json())
     .then((data) => fetchSun(data))
+  }
+
+  //MOVE TO HELPER FUNCTION
+  splitLocation(location) {
+    let array = location.split(',');
+    let city = array[0];
+    let state = array[1].toString().split(' ').join('_');
+    return `${state}/${city}`;
+  }
+  getForecast(location, func) {
+    fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/conditions/q/${this.splitLocation(location)}.json`)
+    .then((response) => response.json())
+    .then((data) => func(data))
   }
 
   render() {
