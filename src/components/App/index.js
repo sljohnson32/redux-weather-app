@@ -26,9 +26,11 @@ export default class App extends Component {
   }
 
   fetchSunAPI(lat, long, fetchSun) {
-    fetch(`http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}`)
+    fetch(`http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&formatted=0`)
     .then((response) => response.json())
     .then((data) => this.filterTime(data))
+    .then((data) => console.log(data))
+    .then((data) => this.checkDaytime(data))
     .then((cleanData) => fetchSun(cleanData))
   }
 
@@ -71,14 +73,15 @@ export default class App extends Component {
     .then((cleanData) => func(cleanData))
   }
 
-  // checkDaytime(data) {
-  //   console.log(props.data.results);
-  //   let sunrise = moment.parseZone(`${this.props.sunrise.sunrise}`).local().format('HH:mm:ss')
-  //    let now = moment().format('HH:mm:ss')
-  //    let sunset = moment.parseZone(`${this.props.sunrise.sunset}`).local().format('HH:mm:ss')
-  //    if (now > sunrise && now < sunset){console.log("It's fuckin' daytime, baby!")}
-  //    console.log(sunrise, sunset);
-  //   }
+  checkDaytime(props) {
+    let sunrise = moment.parseZone(`${props.sunrise}`).local().format('HH:mm:ss')
+    let now = moment().format('HH:mm:ss')
+    let sunset = moment.parseZone(`${props.sunset}`).local().format('HH:mm:ss')
+    if (now > sunrise && now < sunset){console.log("It's fuckin' daytime, baby!")}
+    else if(now > sunset) {console.log("Go to bed!")}
+    console.log(sunrise, sunset);
+  }
+
 
   render() {
     return (
