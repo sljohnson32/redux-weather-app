@@ -1,4 +1,27 @@
 
+
+// export const receiveForecast = (forecastData) => ({
+//   // action object
+// });
+//
+// export const fetchForecast = options => dispatch => {
+//   // return fetch API call
+// };
+
+// const fetchLocationApi = () => {
+// return (dispatch) => {
+// api call
+// from that response you'll dispatch(fetchLoaction(data))
+//}
+//}
+
+// export const addPin = (text) => {
+//   return {
+//     type: 'ADD_PIN',
+//     text
+//   }
+// }
+
 export const receiveForecast = (forecastData) => {
   return {
     type: 'RECEIVE_FORECAST',
@@ -26,27 +49,3 @@ export const fetchWeather = (location) => {
     location
   }
 }
-
-
-
-// export const receiveForecast = (forecastData) => ({
-//   // action object
-// });
-//
-// export const fetchForecast = options => dispatch => {
-//   // return fetch API call
-// };
-
-// const fetchLocationApi = () => {
-// return (dispatch) => {
-// api call
-// from that response you'll dispatch(fetchLoaction(data))
-//}
-//}
-
-// export const addPin = (text) => {
-//   return {
-//     type: 'ADD_PIN',
-//     text
-//   }
-// }

@@ -4,7 +4,7 @@ import { fetchLocation, fetchSun, fetchWeather, rece } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    data: state.latLongSun
+    data: state.appReducer
   }
 }
 

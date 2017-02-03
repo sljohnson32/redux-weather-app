@@ -3,15 +3,15 @@ import React from 'react';
 import './header-style.css';
 
 const Header = (props) => {
-  // debugger
-  console.log('props-lat&long', props.data.results)
+  console.log('props-lat&long', props.data.current_observation)
   return (
     <div className='header'>
       <h1>Weather</h1>
       <div className='header-container'>
-        {props.data.city  ?
+        {/* <p>{props.data.lat}</p> */}
+        {props.data.current_observation  ?
           <div className='header-text-container'>
-          <p className='current'>Current temperature for <p className='city'>{props.data.city}: {props.data.temp_f}&#176;F</p> </p>
+          <p className='current'>Current forecast for <p className='city'>{props.data.current_observation.display_location.city}</p>: </p>
         </div>
            : <p>not loaded yet!</p>}
       </div>
