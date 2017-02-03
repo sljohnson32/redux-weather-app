@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SettingsCity from '../SettingsCity'
 import './settings-style.css'
 
 export default class Settings extends Component {
@@ -41,23 +42,26 @@ export default class Settings extends Component {
   }
 
   render() {
-    const { text, receiveForecast } = this.props;
+    const { data, receiveForecast } = this.props;
     const { cityInput } = this.state;
     return (
       <div>
         <p className='settings-p-tag'>Settings</p>
+        {data.fullName}
         <div className='container'>
-        <input
-          value={this.state.cityInput}
-          onChange={ (e)=> this.setState({ cityInput: e.target.value })}
-          placeholder='Enter a city'
-        />
-        <button
-          className='search-btn'
-          onClick={ () => this.getForecast(cityInput, receiveForecast) }
-        >BUTTON</button>
-        <div>{text}</div>
-      </div>
+          {data.map((city, i) => {
+            return <SettingsCity key={ i } data={city} />
+          })}
+          <input
+            value={this.state.cityInput}
+            onChange={ (e)=> this.setState({ cityInput: e.target.value })}
+            placeholder='Enter a city'
+          />
+          <button
+            className='search-btn'
+            onClick={ () => this.getForecast(cityInput, receiveForecast) }
+          >Add New City</button>
+        </div>
       </div>
     )
   }
