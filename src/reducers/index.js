@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import PinForecastData from './settings-reducer'
-import appReducer from './app-reducer'
+import latLongSun from './app-reducer'
 
 const rootReducer = combineReducers({
   PinForecastData,
-  appReducer
+  latLongSun
 })
 
 export default rootReducer;
