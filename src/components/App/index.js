@@ -69,7 +69,6 @@ export default class App extends Component {
     .then((response) => response.json())
     .then((data) => this.filterData(data))
     .then((cleanData) => func(cleanData))
-    // .then((data) => this.checkD aytime(data))
   }
 
   // checkDaytime(data) {
