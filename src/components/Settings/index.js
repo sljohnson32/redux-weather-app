@@ -18,7 +18,6 @@ export default class Settings extends Component {
 
   filterData(data) {
     return {
-      payload: data.current_observation,
       city: data.current_observation.display_location.city ,
       state: data.current_observation.display_location.state,
       fullName: data.current_observation.display_location.full,
