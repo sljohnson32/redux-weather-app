@@ -44,6 +44,7 @@ export default class Settings extends Component {
   render() {
     const { data, receiveForecast, removePin } = this.props;
     const { cityInput } = this.state;
+    let disableBtn = data.length > 2;
     return (
       <div>
         <p className='settings-p-tag'>Settings</p>
@@ -59,6 +60,7 @@ export default class Settings extends Component {
           />
           <button
             className='search-btn'
+            disabled={disableBtn}
             onClick={ () => this.getForecast(cityInput, receiveForecast) }
           >Add New City</button>
         </div>
