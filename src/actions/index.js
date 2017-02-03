@@ -27,6 +27,13 @@ export const fetchWeather = (location) => {
   }
 }
 
+export const removePin = (pinID) => {
+  return {
+    type: 'REMOVE_PIN',
+    pinID
+  }
+}
+
 
 // export const receiveForecast = (forecastData) => ({
 //   // action object

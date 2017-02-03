@@ -42,7 +42,7 @@ export default class Settings extends Component {
   }
 
   render() {
-    const { data, receiveForecast } = this.props;
+    const { data, receiveForecast, removePin } = this.props;
     const { cityInput } = this.state;
     return (
       <div>
@@ -50,7 +50,7 @@ export default class Settings extends Component {
         {data.fullName}
         <div className='container'>
           {data.map((city, i) => {
-            return <SettingsCity key={ i } data={city} />
+            return <SettingsCity key={ i } pinID={i} data={city} removePin={removePin} />
           })}
           <input
             value={this.state.cityInput}
