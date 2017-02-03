@@ -28,7 +28,8 @@ export default class App extends Component {
   fetchSunAPI(lat, long, fetchSun) {
     fetch(`http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}`)
     .then((response) => response.json())
-    .then((data) => fetchSun(data))
+    .then((data) => this.filterTime(data))
+    .then((cleanData) => fetchSun(cleanData))
   }
 
   //MOVE TO HELPER FUNCTION
@@ -56,19 +57,29 @@ export default class App extends Component {
     }
   }
 
+  filterTime(data){
+    return{
+      sunrise: data.results.sunrise,
+      sunset: data.results.sunset
+    }
+  }
+
   getForecast(location, func) {
     fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/conditions/q/${this.splitLocation(location)}.json`)
     .then((response) => response.json())
     .then((data) => this.filterData(data))
-    .then((data) => func(data))
+    .then((cleanData) => func(cleanData))
+    // .then((data) => this.checkDaytime(data))
   }
 
-  checkDaytime() {
-    let sunrise = moment.parseZone(`${this.props.sunrise.sunrise}`).local().format('HH:mm:ss')
-     let now = moment().format('HH:mm:ss')
-     let sunset = moment.parseZone(`${this.props.sunrise.sunset}`).local().format('HH:mm:ss')
-     if (now > sunrise && now < sunset){console.log("It's fuckin' daytime, baby!")}
-    }
+  // checkDaytime(data) {
+  //   console.log(props.data.results);
+  //   let sunrise = moment.parseZone(`${this.props.sunrise.sunrise}`).local().format('HH:mm:ss')
+  //    let now = moment().format('HH:mm:ss')
+  //    let sunset = moment.parseZone(`${this.props.sunrise.sunset}`).local().format('HH:mm:ss')
+  //    if (now > sunrise && now < sunset){console.log("It's fuckin' daytime, baby!")}
+  //    console.log(sunrise, sunset);
+  //   }
 
   render() {
     return (
