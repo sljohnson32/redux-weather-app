@@ -4,7 +4,6 @@ const settings = (state = [], action) => {
       return [...state, action.forecastData]
     case 'REMOVE_PIN':
       const indexNum = action.pinID;
-      console.log(indexNum)
       return [...state.slice(0, indexNum), ...state.slice(indexNum + 1)]
     default:
       return state;
