@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from '../components/App'
-import { fetchLocation, fetchSun, fetchWeather, rece } from '../actions'
+import { fetchLocation, fetchSun, fetchWeather, receiveForecast } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     fetchWeather: (data) => {
       dispatch(fetchWeather(data))
+    },
+    receiveForecast: (data) => {
+      dispatch(receiveForecast(data))
     }
   }
 }
