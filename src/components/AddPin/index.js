@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './settings-style.css';
 const { splitLocation, filterData } = require('../Helpers/ForecastHelpers');
+import '../Settings/settings-style.css'
 
 export default class AddPin extends Component {
   constructor(props) {
@@ -18,12 +18,11 @@ export default class AddPin extends Component {
   }
 
   render() {
-    const { text, receiveForecast } = this.props;
+    const { data, receiveForecast } = this.props;
     const { cityInput } = this.state;
+    let disableBtn = data.length > 2;
     return (
       <div>
-        <p className='settings-p-tag'>Settings</p>
-        <div className='container'>
         <input
           value={this.state.cityInput}
           onChange={ (e)=> this.setState({ cityInput: e.target.value })}
@@ -31,10 +30,9 @@ export default class AddPin extends Component {
         />
         <button
           className='search-btn'
+          disabled={disableBtn}
           onClick={ () => this.getForecast(cityInput, receiveForecast) }
-        >BUTTON</button>
-        <div>{text}</div>
-      </div>
+        >Add New City</button>
       </div>
     )
   }
