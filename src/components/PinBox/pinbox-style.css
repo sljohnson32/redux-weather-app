@@ -15,7 +15,7 @@
   text-align: center;
 }
 
-.one, .two, .three {
+.pin-container {
   background: #FFFFFF;
   border: 1px solid black;
   display: inline-block;
