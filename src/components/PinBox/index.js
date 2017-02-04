@@ -13,25 +13,25 @@ export default class PinBox extends Component {
           <div className='one'>
             {this.props.PinForecastData.length === 0 ? <p>add a city</p> :
               <div>
-                <p>{this.props.PinForecastData[0].fullName}</p>
-                <p>{this.props.PinForecastData[0].temp_f}</p>
-                <p>{this.props.PinForecastData[0].weather}</p>
+                <p className='card-city'>{this.props.PinForecastData[0].fullName}</p>
+                <p className='card-temp'>{this.props.PinForecastData[0].temp_f}</p>
+                <p className='card-sky'>{this.props.PinForecastData[0].weather}</p>
           </div>}
         </div>
         <div className='two'>
-          {this.props.PinForecastData.length === 0 ? <p>add a city</p> :       
+          {this.props.PinForecastData.length === 0 ? <p>add a city</p> :
             <div>
-              <p>{this.props.PinForecastData[1].fullName}</p>
-              <p>{this.props.PinForecastData[1].temp_f}</p>
-              <p>{this.props.PinForecastData[1].weather}</p>
+              <p className='card-city'>{this.props.PinForecastData[1].fullName}</p>
+              <p className='card-temp'>{this.props.PinForecastData[1].temp_f}</p>
+              <p className='card-sky'>{this.props.PinForecastData[1].weather}</p>
             </div>}
         </div>
         <div className='three'>
           {this.props.PinForecastData.length === 0 ? <p>add a city</p> :
             <div>
-              <p>{this.props.PinForecastData[2].fullName}</p>
-              <p>{this.props.PinForecastData[2].temp_f}</p>
-              <p>{this.props.PinForecastData[2].weather}</p>
+              <p className='card-city'>{this.props.PinForecastData[2].fullName}</p>
+              <p className='card-temp'>{this.props.PinForecastData[2].temp_f}</p>
+              <p className='card-sky'>{this.props.PinForecastData[2].weather}</p>
             </div>}
         </div>
           <button className='edit-btn'><Link to='/settings'>Edit Pinned Cities</Link></button>
