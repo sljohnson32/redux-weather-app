@@ -47,12 +47,12 @@ export default class Settings extends Component {
     let disableBtn = data.length > 2;
     return (
       <div>
-        <p className='settings-p-tag'>Settings</p>
         {data.fullName}
+        {data.map((city, i) => {
+          return <SettingsCity key={ i } pinID={i} data={city} removePin={removePin} />
+        })}
+        <p className='settings-p-tag'>Settings</p>
         <div className='container'>
-          {data.map((city, i) => {
-            return <SettingsCity key={ i } pinID={i} data={city} removePin={removePin} />
-          })}
           <input
             value={this.state.cityInput}
             onChange={ (e)=> this.setState({ cityInput: e.target.value })}

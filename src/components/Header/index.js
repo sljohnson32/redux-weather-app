@@ -4,7 +4,7 @@ import './header-style.css';
 
 const Header = (props) => {
   // debugger
-  console.log('props-lat&long', props.data.results)
+  // console.log('props-lat&long', props.data.results)
   return (
     <div className='header'>
       <h1>Weather</h1>
