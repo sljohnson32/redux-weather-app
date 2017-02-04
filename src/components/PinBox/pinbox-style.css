@@ -43,3 +43,23 @@ a {
   color: black;
   text-decoration: none;
 }
+
+.card-city {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.card-temp {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 100px;
+  font-weight: 400;
+  margin: 50px;
+}
+
+.card-sky {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 20px;
+}

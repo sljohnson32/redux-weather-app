@@ -1,20 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './pinbox-style.css'
 // import { connect } from 'react-redux';
-
-const PinBox = () => {
-  return (
-    <div className='pinbox-container'>
-      <p className='pinbox-title'>Favorites</p>
-      <div className='card-container'>
-        <div className='one'></div>
-        <div className='two'></div>
-        <div className='three'></div>
-        <button className='edit-btn'><Link to='/settings'>Edit Pinned Cities</Link></button>
+export default class PinBox extends Component {
+  render() {
+    console.log('pinbox-props', this.props.PinForecastData[0])
+    // debugger
+    return (
+      <div className='pinbox-container'>
+        <p className='pinbox-title'>Favorites</p>
+        <div className='card-container'>
+          <div className='one'>
+            {this.props.PinForecastData.length === 0 ? <p>add a city</p> :
+              <div>
+                <p className='card-city'>{this.props.PinForecastData[0].fullName}</p>
+                <p className='card-temp'>{this.props.PinForecastData[0].temp_f}</p>
+                <p className='card-sky'>{this.props.PinForecastData[0].weather}</p>
+          </div>}
+        </div>
+        <div className='two'>
+          {this.props.PinForecastData.length === 0 ? <p>add a city</p> :
+            <div>
+              <p className='card-city'>{this.props.PinForecastData[1].fullName}</p>
+              <p className='card-temp'>{this.props.PinForecastData[1].temp_f}</p>
+              <p className='card-sky'>{this.props.PinForecastData[1].weather}</p>
+            </div>}
+        </div>
+        <div className='three'>
+          {this.props.PinForecastData.length === 0 ? <p>add a city</p> :
+            <div>
+              <p className='card-city'>{this.props.PinForecastData[2].fullName}</p>
+              <p className='card-temp'>{this.props.PinForecastData[2].temp_f}</p>
+              <p className='card-sky'>{this.props.PinForecastData[2].weather}</p>
+            </div>}
+        </div>
+          <button className='edit-btn'><Link to='/settings'>Edit Pinned Cities</Link></button>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
-
-export default PinBox;

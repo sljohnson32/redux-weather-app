@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './settingscity-style.css'
 
 export default class Settings extends Component {
 
@@ -6,11 +7,10 @@ export default class Settings extends Component {
     const { data, pinID, removePin } = this.props;
     console.log(data, pinID)
     return (
-      <div>
-        <button
+      <div className='hold-item'>
+        <p className='city-settings'>{data.fullName}</p><button className='delete-btn'
           onClick={ () => removePin(pinID) }
         >x</button>
-        <h4>{data.fullName}</h4>
       </div>
     )
   }

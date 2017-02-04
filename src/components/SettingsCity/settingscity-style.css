@@ -1,0 +1,24 @@
+.city-settings {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 26px;
+  display: inline-block;
+}
+
+.hold-item {
+  text-align: center;
+}
+
+.delete-btn {
+  background: #FFFFFF;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-family: 'Quicksand', sans-serif;
+  height: 20px;
+  margin-left: 10px;
+  outline-color: black;
+  width: 20px;
+}
+
+.delete-btn:hover {
+  background: gray;
+}
