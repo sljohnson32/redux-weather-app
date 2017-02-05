@@ -13,18 +13,21 @@ describe('settings reducer', function () {
       expect(settings(undefined, {})).toEqual([]);
     });
 
-    // it('should accept action SET_ACTIVE_USER', () => {
-    //   this.action = {
-    //     type: 'SET_ACTIVE_USER',
-    //     data: {
-    //       id: 1,
-    //       name: 'Taylor',
-    //       password: 'password',
-    //       email: 'tman2272@aol.com',
-    //     },
-    //   };
-    //
-    //   const newUserState = user(this.state, this.action);
-    //   expect(newUserState).to.deep.equal(this.action.data);
-    // });
-  });
+    it('should accept action RECEIVE_FORECAST', () => {
+      expect(
+        reducer({}, {
+          type: 'RECEIVE_FORECAST',
+          forecastData: {}
+        })
+      ).toEqual(
+        [{}]
+      )
+
+    })
+  })
+
+  describe('app reducer', function () {
+      it('should return an initial state', () => {
+        expect(settings(undefined, {})).toEqual([]);
+      });
+    });
