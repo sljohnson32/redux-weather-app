@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AddPin from '../components/AddPin'
-import { receiveForecast } from '../actions'
+import { receiveForecast, receiveExtForecast } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -12,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     receiveForecast: (data) => {
       dispatch(receiveForecast(data))
+    },
+    receiveExtForecast: (data, fullName) => {
+      dispatch(receiveExtForecast(data, fullName))
     }
   }
 }
