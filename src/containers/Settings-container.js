@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Settings from '../components/Settings';
-import { receiveForecast, removePin } from '../actions';
+import { receiveForecast, removePin, receiveExtForecast } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     removePin: (data) => {
       dispatch(removePin(data))
+    },
+    receiveExtForecast: (data, city) => {
+      dispatch(receiveExtForecast(data, city))
     }
   }
 }

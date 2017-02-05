@@ -19,7 +19,8 @@ module.exports = {
       wind_string: data.current_observation.wind_string,
       wind_dir: data.current_observation.wind_dir,
       wind_mph: data.current_observation.wind_mph,
-      icon_url: data.current_observation.icon_url
+      icon_url: data.current_observation.icon_url,
+      extForecast: {}
     }
   },
 

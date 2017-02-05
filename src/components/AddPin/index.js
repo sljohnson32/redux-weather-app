@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-const { splitLocation, filterData, filterExtData } = require('../Helpers/ForecastHelpers');
+const { splitLocation, filterData } = require('../Helpers/ForecastHelpers');
 import '../Settings/settings-style.css'
 
 export default class AddPin extends Component {
@@ -15,15 +15,10 @@ export default class AddPin extends Component {
     .then((response) => response.json())
     .then((data) => filterData(data))
     .then((cleanData) => this.props.receiveForecast(cleanData));
-    fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/forecast10day/q/${splitLocation(location)}.json`)
-    .then((response) => response.json())
-    .then((data) => filterExtData(data))
-    .then((cleanData) => console.log('EXT DATA!', cleanData));
-    // .then((cleanData) => this.props.receiveExtForecast(cleanData));
   }
 
   render() {
-    const { data, receiveForecast } = this.props;
+    const { data } = this.props;
     const { cityInput } = this.state;
     let disableBtn = data.length > 2;
     return (

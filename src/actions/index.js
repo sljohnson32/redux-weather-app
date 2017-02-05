@@ -6,10 +6,12 @@ export const receiveForecast = (forecastData) => {
   }
 }
 
-export const receiveExtForecast = (forecastData, city) => {
-  type: 'RECEIVE_10DAY',
-  forecastData,
-  city
+export const receiveExtForecast = (forecastData, fullName) => {
+  return {
+    type: 'RECEIVE_EXTENDED',
+    forecastData,
+    fullName
+  }
 }
 
 export const fetchLocation = (data) => {

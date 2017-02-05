@@ -21,7 +21,7 @@ export default class App extends Component {
     })
   }
 
-  fetchCurrentCity(lat, long, fetchWeather) {
+  fetchCurrentCity(lat, long) {
     fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/geolookup/q/${lat},${long}.json`)
     .then((response) => response.json())
     .then((data) => this.getForecast(`${data.location.city}, ${data.location.state}`))
@@ -46,7 +46,6 @@ export default class App extends Component {
     .then((response) => response.json())
     .then((data) => filterData(data))
     .then((cleanData) => this.props.fetchWeather(cleanData))
-    // .then((data) => this.checkD aytime(data))
   }
 
   // checkDaytime(data) {
