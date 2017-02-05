@@ -37,6 +37,7 @@ export default class App extends Component {
   // .then((data) => this.checkDaytime(data))
 
   filterTime(time){
+    console.log(time.results);
     return{
       sunrise: time.results.sunrise,
       sunset: time.results.sunset

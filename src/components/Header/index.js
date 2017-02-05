@@ -25,15 +25,13 @@ const Header = (props) => {
       message = "Maybe go to bed"
 
   }
-  console.log(sunrise, morning, evening, sunset);
 
   return (
     <div className='header'>
       <h1>Weather</h1>
       <div className='header-container'>
         <section className='time-container'>
-          sunrise: {sunrise}, sunset: {sunset}, current time: {now}
-          <br/>{message}
+          Sunrise: {sunrise}, Sunset: {sunset}, Current Time: {now}  {message}
         </section>
         {props.data.city  ?
           <div className='header-text-container'>

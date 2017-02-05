@@ -25,9 +25,13 @@ h1 {
   margin-left: 30px;
 }
 
-.city, .current {
+.city, .current, .time-container {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: bold;
   display: inline-block;
+}
+
+.time-container {
+  float: right;
 }
