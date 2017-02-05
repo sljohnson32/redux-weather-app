@@ -15,9 +15,6 @@ const mapDispatchToProps = (dispatch) => {
     },
     removePin: (data) => {
       dispatch(removePin(data))
-    },
-    receiveExtForecast: (data, city) => {
-      dispatch(receiveExtForecast(data, city))
     }
   }
 }
