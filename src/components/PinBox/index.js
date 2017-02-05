@@ -14,7 +14,7 @@ export default class PinBox extends Component {
         {PinForecastData.map((city, i) => {
           return <Pin key={i} data={city} />
         })}
-        {PinForecastData.length < 2 ?
+        {PinForecastData.length < 3 ?
           <div className='pin-container'>
             <AddPin data={PinForecastData} receiveForecast={receiveForecast} />
           </div>

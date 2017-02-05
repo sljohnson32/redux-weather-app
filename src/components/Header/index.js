@@ -11,7 +11,7 @@ const Header = (props) => {
       <div className='header-container'>
         {props.data.city  ?
           <div className='header-text-container'>
-          <p className='current'>Current temperature for <p className='city'>{props.data.city}: {props.data.temp_f}&#176;F</p> </p>
+          <p className='current'>Current temperature for <span className='city'>{props.data.city}: {props.data.temp_f}&#176;F</span> </p>
         </div>
            : <p>not loaded yet!</p>}
       </div>
