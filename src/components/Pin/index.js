@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 const { splitLocation, filterExtData } = require('../Helpers/ForecastHelpers');
 
 export default class Pin extends Component {
@@ -20,7 +21,7 @@ export default class Pin extends Component {
           <p className='card-sky'>{data.weather}</p>
           <button
             onClick={ () => this.getExtended(data.fullName) }
-          >View extended forecast>>></button>
+          ><Link to={'/' + data.city}>View extended forecast>>></Link></button>
         </div>
       </div>
     )
