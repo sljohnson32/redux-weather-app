@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+// import { connect } from 'react-redux';
 
-const PinExtended = () => {
+const PinExtended = (props) => {
+  let data = props.PinForecastData.find(data => {
+    return data.city === props.params.city;
+  })
   return (
-    <div>pin extended</div>
-  )
+    <div>{data.fullName}</div>
+    )
 }
 
 export default PinExtended;

@@ -14,7 +14,10 @@ export default class Settings extends Component {
           {data.map((city, i) => {
             return <SettingsCity key={ i } pinID={i} data={city} removePin={removePin} />
           })}
-          <AddPin data={data} receiveForecast={receiveForecast} />
+          <AddPin
+            data={data}
+            receiveForecast={receiveForecast}
+           />
         </div>
       </div>
     )

@@ -10,15 +10,15 @@ export default class AddPin extends Component {
     }
   }
 
-  getForecast(location, func) {
+  getForecast(location) {
     fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/conditions/q/${splitLocation(location)}.json`)
     .then((response) => response.json())
     .then((data) => filterData(data))
-    .then((cleanData) => func(cleanData))
+    .then((cleanData) => this.props.receiveForecast(cleanData));
   }
 
   render() {
-    const { data, receiveForecast } = this.props;
+    const { data } = this.props;
     const { cityInput } = this.state;
     let disableBtn = data.length > 2;
     return (
@@ -31,7 +31,7 @@ export default class AddPin extends Component {
         <button
           className='search-btn'
           disabled={disableBtn}
-          onClick={ () => this.getForecast(cityInput, receiveForecast) }
+          onClick={ () => this.getForecast(cityInput) }
         >Add New City</button>
       </div>
     )

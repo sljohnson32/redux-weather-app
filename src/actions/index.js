@@ -6,12 +6,20 @@ export const receiveForecast = (forecastData) => {
   }
 }
 
+export const receiveExtForecast = (forecastData, fullName) => {
+  return {
+    type: 'RECEIVE_EXTENDED',
+    forecastData,
+    fullName
+  }
+}
+
 export const fetchLocation = (data) => {
   return {
     type: 'FETCH_LOCATION',
     data
   }
-};
+}
 
 export const fetchSun = (time) => {
   return {
