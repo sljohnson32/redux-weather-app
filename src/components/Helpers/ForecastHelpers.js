@@ -8,7 +8,7 @@ module.exports = {
 
   filterData(data) {
     return {
-      city: data.current_observation.display_location.city ,
+      city: data.current_observation.display_location.city,
       state: data.current_observation.display_location.state,
       fullName: data.current_observation.display_location.full,
       localTime: data.current_observation.local_time_rfc822,
