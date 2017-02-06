@@ -15,7 +15,7 @@ export default class PinBox extends Component {
             return <Pin key={i} data={city} receiveExtForecast={receiveExtForecast} />
           })}
           {PinForecastData.length < 3 ?
-            <div className='pin-container'>
+            <div className='pin-container add-pin'>
               <p className='card-city'>Pin Another City</p>
               <AddPin data={PinForecastData} receiveForecast={receiveForecast} />
             </div>
