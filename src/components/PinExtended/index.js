@@ -6,7 +6,7 @@ const PinExtended = (props) => {
     return data.city === props.params.city;
   })
   return (
-    <div>{data.fullName}</div>
+    <div>{data.extForecast[0].text}</div>
     )
 }
 
