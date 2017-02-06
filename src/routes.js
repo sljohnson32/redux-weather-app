@@ -10,7 +10,10 @@ const Routes = (
   <Route>
     <Route path="/" component={App}>
       <IndexRoute component={PinBox} />
-      <Route path=':city' component={PinExtended} />
+      <Route path='forecast'>
+        <IndexRoute component={PinExtended}/>
+        <Route path=':city' component={PinExtended}/>
+      </Route>
       <Route path='settings' component={Settings} />
     </Route>
   </Route>

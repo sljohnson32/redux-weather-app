@@ -6,18 +6,15 @@ import './settings-style.css';
 export default class Settings extends Component {
 
   render() {
-    const { data, receiveForecast, removePin } = this.props;
+    const { PinForecastData, receiveForecast, removePin } = this.props;
     return (
       <div>
         <p className='settings-p-tag'>Settings</p>
         <div className='container'>
-          {data.map((city, i) => {
+          {PinForecastData.map((city, i) => {
             return <SettingsCity key={ i } pinID={i} data={city} removePin={removePin} />
           })}
-          <AddPin
-            data={data}
-            receiveForecast={receiveForecast}
-           />
+          <AddPin data={PinForecastData} receiveForecast={receiveForecast} />
         </div>
       </div>
     )

@@ -3,9 +3,7 @@ import Settings from '../components/Settings';
 import { receiveForecast, removePin, receiveExtForecast } from '../actions';
 
 const mapStateToProps = (state) => {
-  return {
-    data: state.PinForecastData
-  }
+  return state;
 }
 
 const mapDispatchToProps = (dispatch) => {
