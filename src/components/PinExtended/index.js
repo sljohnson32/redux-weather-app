@@ -1,11 +1,21 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router'
 // import { connect } from 'react-redux';
 
 export default class PinExtended extends Component {
+
+  getData() {
+    if (this.props.params.city == this.props.latLongSun.city) {
+      return this.props.latLongSun
+    } else {
+      return this.props.PinForecastData.find(data => {
+        return data.city === this.props.params.city;
+      })
+    }
+  }
+
   render() {
-    let data = this.props.PinForecastData.find(data => {
-      return data.city === this.props.params.city;
-    })
+    let data = this.getData();
     let extendedForecast = data.extForecast.map((day, index) => {
       return (
         <div key={index}>
