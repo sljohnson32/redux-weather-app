@@ -7,7 +7,7 @@
 .pinbox-title {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  font-size: 26px;
+  font-size: 40px;
   padding-top: 20px;
 }
 
@@ -27,14 +27,21 @@
 }
 
 .edit-btn {
-  background: #FFFFFF;
-  border: 1px solid black;
+  background: black;
+  color: white;
+  border: none;
   border-radius: 8px;
   font-family: 'Quicksand', sans-serif;
-  height: 35px;
-  margin-left: 10px;
+  height: 60px;
+  text-align: center;
   outline-color: black;
-  width: 100px;
+  width: 200px;
+  display: block;
+  margin: 20px auto;
+}
+
+.edit-btn a {
+  color: white;
 }
 
 .edit-btn:hover {

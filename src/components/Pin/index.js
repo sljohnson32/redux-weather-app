@@ -22,7 +22,7 @@ export default class Pin extends Component {
             <img src={data.icon_url}/>
             <p className='card-sky'>{data.weather}</p>
           </section>
-          <Link to={'/forecast/' + data.city}>View extended forecast>>></Link>
+          <Link to={'/forecast/' + data.city}><h3>View extended forecast>>></h3></Link>
         </div>
       </div>
     )
