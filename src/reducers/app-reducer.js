@@ -3,9 +3,9 @@ const app = (state = {lat: '', long: '', results: {}, location: {}}, action) => 
     case 'FETCH_LOCATION':
       return action.data;
     case 'FETCH_SUN':
-      return Object.assign(...state, action.time);
+      return Object.assign({...state}, action.time);
     case 'FETCH_WEATHER':
-      return Object.assign(...state, action.location);
+      return Object.assign({...state}, action.location);
     default:
       return state
   }

@@ -2,13 +2,14 @@ import React from 'react';
 import moment from 'moment';
 // import { connect } from 'react-redux';
 import './header-style.css';
-// require("url-loader?limit=10000!./file.png");
 
 const Header = (props) => {
   let icon = <img alt='time of day'/>
   let now = moment().format('HH:mm:ss')
   let sunrise = moment.parseZone(`${props.data.sunrise}`).local().format('HH:mm:ss')
+  console.log(sunrise);
   let morning = moment(sunrise, 'HH:mm:ss').add(2, 'h').format('HH:mm:ss')
+  console.log(morning);
   let sunset = moment.parseZone(`${props.data.sunset}`).local().format('HH:mm:ss')
   let evening = moment(sunset, 'HH:mm:ss').subtract(2, 'h').format('HH:mm:ss')
   let timeOfDay = {
@@ -25,11 +26,9 @@ const Header = (props) => {
       icon = <img src={require('./images/daytime.png')} alt="icon of sun"/>
       break;
     case (evening < now && now < sunset):
-      timeOfDay.props = evening;
       icon = <img src={require('./images/sunset.png')} alt="icon of sunset"/>
       break;
     default:
-      // timeOfDay.props.time = night;
       icon = <img src={require('./images/night.png')} alt="icon of moon"/>
 
   }
