@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 const { splitLocation, filterData } = require('../Helpers/ForecastHelpers.js');
 import './app-style.css'
-import moment from 'moment';
 
 // import { connect } from 'react-redux';
 
@@ -17,7 +16,6 @@ export default class App extends Component {
       const long = position.coords.longitude
       fetchLocation({lat, long});
       this.fetchSunAPI(lat, long, fetchSun);
-      console.log(lat);
       this.fetchCurrentCity(lat, long, fetchWeather);
     })
   }
@@ -37,7 +35,6 @@ export default class App extends Component {
   // .then((data) => this.checkDaytime(data))
 
   filterTime(time){
-    console.log(time.results);
     return{
       sunrise: time.results.sunrise,
       sunset: time.results.sunset
@@ -55,7 +52,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-
           <Header {...this.props}/>
           {this.props.children}
       </div>
