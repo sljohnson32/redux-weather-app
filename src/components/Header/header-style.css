@@ -11,6 +11,10 @@ h1 {
   background-color: #FFFFFF;
 }
 
+.city {
+  font-weight: bold;
+}
+
 .header-text-container {
   height: 120px;
   width: 75%;
@@ -50,11 +54,16 @@ h1 {
 }
 .header-overview {
   display: inline-block;
-  margin: 60px 20px 20px 50px;
+  margin: 60px 30px 30px 50px;
   vertical-align: middle;
 }
 .header-ext-btn {
   display: inline-block;
   margin: 40px 20px 20px 40px;
   vertical-align: middle;
+}
+
+.loading-msg {
+  display: block;
+  margin-left: 400px;
 }

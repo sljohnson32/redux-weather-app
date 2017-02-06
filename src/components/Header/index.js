@@ -45,8 +45,8 @@ const Header = (props) => {
               <p>{props.data.weather}</p>
             </section>
             <section className='header-overview'>
-              <article>Current temperature for :
-                <span className='city'>{props.data.city}: {props.data.temp_f}&#176;F</span> with {props.data.weather} skies.
+              <article>Current temperature for
+                <span className='city'> {props.data.city}: {props.data.temp_f}&#176;F</span> with {props.data.weather} skies.
                 <div className='time-container'>
                   <p>Sunrise: {sunrise}, Sunset: {sunset}, Current Time: {now}</p>
                 </div>
@@ -56,7 +56,7 @@ const Header = (props) => {
               <Link to={'/forecast/' + props.data.city}>View extended forecast>>></Link>
             </section>
           </div>
-           : <p>Please be patient while we get your weather!</p>}
+           : <h2 className='loading-msg'>Please be patient while we get your weather!</h2>}
       </div>
     </div>
   )
