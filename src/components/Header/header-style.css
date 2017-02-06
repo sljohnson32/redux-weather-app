@@ -26,13 +26,7 @@ h1 {
   display: inline-block;
 }
 
-/*.current {
-  margin-left: 30px;
-}*/
-
-.city, .current, .time-container {
+.icon {
+  position: absolute;
+  float: right;
 }
-
-/*.time-container {
-  margin-right: 30px;
-}*/

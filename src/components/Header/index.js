@@ -2,9 +2,10 @@ import React from 'react';
 import moment from 'moment';
 // import { connect } from 'react-redux';
 import './header-style.css';
+// require("url-loader?limit=10000!./file.png");
 
 const Header = (props) => {
-  let message = ''
+  let icon = <img alt='time of day'/>
   let now = moment().format('HH:mm:ss')
   let sunrise = moment.parseZone(`${props.data.sunrise}`).local().format('HH:mm:ss')
   let morning = moment(sunrise, 'HH:mm:ss').add(2, 'h').format('HH:mm:ss')
@@ -18,18 +19,18 @@ const Header = (props) => {
   }
   switch (true) {
     case (sunrise < now && now < morning):
-      message = "Wakey wakey!"
+      icon = <img src={require('./images/sunrise.png')} alt="icon of sunrise"/>
       break;
     case (morning < now && now < evening):
-      message = "Work time!"
+      icon = <img src={require('./images/daytime.png')} alt="icon of sun"/>
       break;
     case (evening < now && now < sunset):
       timeOfDay.props = evening;
-      message = "Have you eaten yet?"
+      icon = <img src={require('./images/sunset.png')} alt="icon of sunset"/>
       break;
     default:
       // timeOfDay.props.time = night;
-      message = "Maybe go to bed"
+      icon = <img src={require('./images/night.png')} alt="icon of moon"/>
 
   }
 
@@ -42,7 +43,7 @@ const Header = (props) => {
             <p>Current temperature for :
               <span className='city'>{props.data.city}: {props.data.temp_f}&#176;F</span> with {props.data.weather} skies.
               <div className='time-container'>
-                Sunrise: {sunrise}, Sunset: {sunset}, Current Time: {now}  <p>{message}</p>
+                Sunrise: {sunrise}, Sunset: {sunset}, Current Time: {now}  <p className='icon'>{icon}</p>
               </div>
             </p>
           </div>
