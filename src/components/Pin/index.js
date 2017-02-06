@@ -19,7 +19,7 @@ export default class Pin extends Component {
           <p className='card-city'>{data.fullName}</p>
           <p className='card-temp'>{data.temp_f}</p>
           <p className='card-sky'>{data.weather}</p>
-          <Link to={'/' + data.city}>View extended forecast>>></Link>
+          <Link to={'/forecast/' + data.city}>View extended forecast>>></Link>
         </div>
       </div>
     )
