@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 const { splitLocation, filterData } = require('../Helpers/ForecastHelpers.js');
 import './app-style.css'
 
-// import moment from 'moment';
 // import { connect } from 'react-redux';
 
 import Header from '../Header';
@@ -28,16 +27,17 @@ export default class App extends Component {
   }
 
   fetchSunAPI(lat, long, fetchSun) {
-    fetch(`http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}`)
+    fetch(`http://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&formatted=0`)
     .then((response) => response.json())
-    .then((data) => this.filterTime(data))
-    .then((cleanData) => fetchSun(cleanData))
+    .then((time) => this.filterTime(time))
+    .then((cleanTime) => fetchSun(cleanTime))
   }
+  // .then((data) => this.checkDaytime(data))
 
-  filterTime(data){
+  filterTime(time){
     return{
-      sunrise: data.results.sunrise,
-      sunset: data.results.sunset
+      sunrise: time.results.sunrise,
+      sunset: time.results.sunset
     }
   }
 
@@ -48,20 +48,12 @@ export default class App extends Component {
     .then((cleanData) => this.props.fetchWeather(cleanData))
   }
 
-  // checkDaytime(data) {
-  //   console.log(props.data.results);
-  //   let sunrise = moment.parseZone(`${this.props.sunrise.sunrise}`).local().format('HH:mm:ss')
-  //    let now = moment().format('HH:mm:ss')
-  //    let sunset = moment.parseZone(`${this.props.sunrise.sunset}`).local().format('HH:mm:ss')
-  //    if (now > sunrise && now < sunset){console.log("It's fuckin' daytime, baby!")}
-  //    console.log(sunrise, sunset);
-  //   }
 
   render() {
     return (
       <div>
-        <Header {...this.props}/>
-        {this.props.children}
+          <Header {...this.props}/>
+          {this.props.children}
       </div>
     )
   }
