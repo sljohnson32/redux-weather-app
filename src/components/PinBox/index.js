@@ -6,13 +6,13 @@ import './pinbox-style.css';
 
 export default class PinBox extends Component {
   render() {
-    const { PinForecastData, receiveForecast } = this.props;
+    const { PinForecastData, receiveForecast, receiveExtForecast } = this.props;
     return (
       <div className='pinbox-container'>
         <p className='pinbox-title'>Favorites</p>
         <div className='card-container'>
         {PinForecastData.map((city, i) => {
-          return <Pin key={i} data={city} />
+          return <Pin key={i} data={city} receiveExtForecast={receiveExtForecast} />
         })}
         {PinForecastData.length < 3 ?
           <div className='pin-container'>
