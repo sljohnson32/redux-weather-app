@@ -26,6 +26,10 @@
   width: 350px;
 }
 
+.add-pin {
+  padding-top: 140px;
+}
+
 .edit-btn {
   background: black;
   color: white;
