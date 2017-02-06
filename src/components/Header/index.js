@@ -12,12 +12,12 @@ const Header = (props) => {
   console.log(morning);
   const sunset = moment.parseZone(`${props.data.sunset}`).local().format('HH:mm:ss')
   const evening = moment(sunset, 'HH:mm:ss').subtract(2, 'h').format('HH:mm:ss')
-  // let timeOfDay = {
-  //   sunrise: sunrise,
-  //   morning: morning,
-  //   evening: evening,
-  //   // night
-  // }
+  let timeOfDay = {
+    sunrise: sunrise,
+    morning: morning,
+    evening: evening,
+    // night
+  }
   switch (true) {
     case (sunrise < now && now < morning):
       icon = <img src={require('./images/sunrise.png')} alt="icon of sunrise"/>
@@ -36,7 +36,7 @@ const Header = (props) => {
   return (
     <div className='header'>
       <h1>Weather</h1>
-      <div>
+      <div className={timeOfDay.props}>
         {props.data.city  ?
           <div className='header-text-container'>
             <p>Current temperature for :
