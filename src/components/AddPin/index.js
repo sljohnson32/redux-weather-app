@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 const { splitLocation, filterData } = require('../Helpers/ForecastHelpers');
-import '../Settings/settings-style.css'
+import './addpin-style.css'
 
 export default class AddPin extends Component {
   constructor(props) {
@@ -24,12 +24,13 @@ export default class AddPin extends Component {
     return (
       <div>
         <input
+          className='addpin-input'
           value={this.state.cityInput}
           onChange={ (e)=> this.setState({ cityInput: e.target.value })}
           placeholder='Enter a city'
         />
         <button
-          className='search-btn'
+          className='addpin-btn'
           disabled={disableBtn}
           onClick={ () => this.getForecast(cityInput) }
         >Add New City</button>

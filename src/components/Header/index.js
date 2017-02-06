@@ -6,39 +6,42 @@ import './header-style.css';
 
 const Header = (props) => {
   let icon;
+  let timeText;
   let now = moment().format('HH:mm a')
   let sunrise = moment.parseZone(`${props.data.sunrise}`).local().format('HH:mm a')
   let morning = moment(sunrise, 'HH:mm a').add(2, 'h').format('HH:mm a')
   let sunset = moment.parseZone(`${props.data.sunset}`).local().format('HH:mm a')
   let evening = moment(sunset, 'HH:mm a').subtract(2, 'h').format('HH:mm a')
-  let timeOfDay = {
-    sunrise,
-    morning,
-    evening,
-    // night
-  }
   switch (true) {
     case (sunrise < now && now < morning):
       icon = <img src={require('./images/sunrise.png')} alt="icon of sunrise"/>
+      timeText = 'Good morning, sunshine!'
       break
     case (morning < now && now < evening):
       icon = <img src={require('./images/daytime.png')} alt="icon of sun"/>
+      timeText = 'Good day, mate!'
       break
     case (evening < now && now < sunset):
       icon = <img src={require('./images/sunset.png')} alt="icon of sunset"/>
+      timeText = 'Good night, sleep tight!'
       break
     default:
       icon = <img src={require('./images/night.png')} alt="icon of moon"/>
+      timeText = 'Get some sleep!'
   }
 
   return (
     <div className='header'>
       <h1>Weather</h1>
-      <div className={timeOfDay.props}>
+      <section className='time-info'>
+        <span className='icon'>{icon}</span>
+        <p>{timeText}</p>
+      </section>
+      <div>
         {props.data.city  ?
           <div className='header-text-container'>
             <section className='header-icon'>
-              <span className='icon'>{icon}</span>
+              <img src={props.data.icon_url} />
               <p>{props.data.weather}</p>
             </section>
             <section className='header-overview'>

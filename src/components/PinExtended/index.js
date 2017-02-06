@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router';
+import './pinextended-style.css';
 
 export default class PinExtended extends Component {
 
@@ -17,7 +19,7 @@ export default class PinExtended extends Component {
     let extendedForecast = data.extForecast.map((day, index) => {
       return (
         <div key={index}>
-          <section className='ext-container'>
+          <section className='ext-card'>
             <section className='ext-overview'>
               <h3 className='ext-dayTitle'>{day.day}, {day.month} {day.date}</h3>
               <article className='ext-icon'>
@@ -59,7 +61,9 @@ export default class PinExtended extends Component {
         <section className='ext-header'>
           <h2>{data.city}</h2>
         </section>
-        {extendedForecast}
+        <section className='ext-container'>
+          {extendedForecast}
+        </section>
       </div>
     )
   }

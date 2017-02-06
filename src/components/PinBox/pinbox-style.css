@@ -13,15 +13,17 @@
 
 .card-container {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .pin-container {
   background: #FFFFFF;
   border: 1px solid black;
   display: inline-block;
-  height: 350px;
+  height: 450px;
   margin: 20px 15px;
-  width: 300px;
+  width: 350px;
 }
 
 .edit-btn {

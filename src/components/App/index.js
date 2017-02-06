@@ -3,8 +3,6 @@ import Header from '../Header';
 const { splitLocation, filterData, filterExtData } = require('../Helpers/ForecastHelpers.js');
 import './app-style.css'
 
-// import { connect } from 'react-redux';
-
 export default class App extends Component {
 
   componentDidMount() {
@@ -47,7 +45,7 @@ export default class App extends Component {
     fetch(`http://api.wunderground.com/api/0b7e4bc2937ad616/forecast10day/q/${splitLocation(location)}.json`)
     .then((response) => response.json())
     .then((data) => filterExtData(data))
-    .then((cleanData) => this.props.receiveExtForecast(cleanData, location));
+    .then((cleanData) => this.props.receiveExtForecastApp(cleanData, location));
   }
 
   render() {
