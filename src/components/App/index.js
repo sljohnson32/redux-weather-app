@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header';
-const { splitLocation, filterData, filterExtData, receiveExtForecast } = require('../Helpers/ForecastHelpers.js');
+const { splitLocation, filterData, filterExtData } = require('../Helpers/ForecastHelpers.js');
 import './app-style.css'
 
 // import { connect } from 'react-redux';
