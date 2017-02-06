@@ -52,17 +52,17 @@ describe('app reducer', () => {
   it('should accept action FETCH_SUN', () => {
       const action = {
         type: 'FETCH_SUN',
-        time: [{1:1},{2:2},{3:3}]
+        time: [0, 1, 2]
       };
-      expect(app([], action)).toEqual([{1:1},{2:2},{3:3}]);
+      expect(app([], action)).toEqual({"0": 0, "1": 1, "2": 2});
     });
 
     it('should accept action FETCH_WEATHER', () => {
         const action = {
           type: 'FETCH_WEATHER',
-          location: 'White Bear Lake'
+          location: 'Denver'
         };
-        expect(app([], action)).toEqual('White Bear Lake');
+        expect(app([], action)).toEqual({"0": "D", "1": "e", "2": "n", "3": "v", "4": "e", "5": "r"});
     });
 })
 })
