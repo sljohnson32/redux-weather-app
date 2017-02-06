@@ -13,6 +13,13 @@ export const receiveExtForecast = (forecastData, fullName) => {
     fullName
   }
 }
+export const receiveExtForecastApp = (forecastData, fullName) => {
+  return {
+    type: 'APP_RECEIVE_EXTENDED',
+    forecastData,
+    fullName
+  }
+}
 
 export const fetchLocation = (data) => {
   return {

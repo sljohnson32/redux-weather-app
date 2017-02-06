@@ -1,0 +1,23 @@
+.addpin-btn {
+  background: #FFFFFF;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: inline-block;
+  font-family: 'Quicksand', sans-serif;
+  height: 30px;
+  margin-left: 10px;
+  outline-color: black;
+  width: 80px;
+}
+
+.addpin-input {
+  height: 25px;
+  background: #FFFFFF;
+  border: 1px solid black;
+  display: inline-block;
+  width: 140px;
+}
+
+.addpin-btn:hover {
+  background: gray;
+}

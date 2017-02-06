@@ -1,15 +1,25 @@
 import React, {Component} from 'react';
-// import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import './pinextended-style.css';
 
 export default class PinExtended extends Component {
+
+  getData() {
+    if (this.props.params.city === this.props.latLongSun.city) {
+      return this.props.latLongSun
+    } else {
+      return this.props.PinForecastData.find(data => {
+        return data.city === this.props.params.city;
+      })
+    }
+  }
+
   render() {
-    let data = this.props.PinForecastData.find(data => {
-      return data.city === this.props.params.city;
-    })
+    let data = this.getData();
     let extendedForecast = data.extForecast.map((day, index) => {
       return (
         <div key={index}>
-          <section className='ext-container'>
+          <section className='ext-card'>
             <section className='ext-overview'>
               <h3 className='ext-dayTitle'>{day.day}, {day.month} {day.date}</h3>
               <article className='ext-icon'>
@@ -51,7 +61,9 @@ export default class PinExtended extends Component {
         <section className='ext-header'>
           <h2>{data.city}</h2>
         </section>
-        {extendedForecast}
+        <section className='ext-container'>
+          {extendedForecast}
+        </section>
       </div>
     )
   }

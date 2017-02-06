@@ -11,16 +11,17 @@ export default class PinBox extends Component {
       <div className='pinbox-container'>
         <p className='pinbox-title'>Favorites</p>
         <div className='card-container'>
-        {PinForecastData.map((city, i) => {
-          return <Pin key={i} data={city} receiveExtForecast={receiveExtForecast} />
-        })}
-        {PinForecastData.length < 3 ?
-          <div className='pin-container'>
-            <AddPin data={PinForecastData} receiveForecast={receiveForecast} />
-          </div>
-          : <div/>}
+          {PinForecastData.map((city, i) => {
+            return <Pin key={i} data={city} receiveExtForecast={receiveExtForecast} />
+          })}
+          {PinForecastData.length < 3 ?
+            <div className='pin-container'>
+              <p className='card-city'>Pin Another City</p>
+              <AddPin data={PinForecastData} receiveForecast={receiveForecast} />
+            </div>
+            : <div/>}
         </div>
-          <button className='edit-btn'><Link to='/settings'>Edit Pinned Cities</Link></button>
+        <button className='edit-btn'><Link to='/settings'>Edit Pinned Cities</Link></button>
       </div>
     )
   }
