@@ -9,29 +9,30 @@ h1 {
 .header {
   background-color: #FFFFFF;
   padding: 10px 0;
+  border-bottom: 1px solid black;
 }
 
 .header-container {
   background-color: #FFFFFF;
-  border-bottom: 1px solid black;
 }
 
 .header-text-container {
   margin-top: -10px;
   height: 70px;
-}
-
-.current {
-  margin-left: 30px;
-}
-
-.city, .current, .time-container {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: bold;
+  align-items: center;
   display: inline-block;
 }
 
-.time-container {
-  float: right;
+/*.current {
+  margin-left: 30px;
+}*/
+
+.city, .current, .time-container {
 }
+
+/*.time-container {
+  margin-right: 30px;
+}*/
