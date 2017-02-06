@@ -40,7 +40,7 @@ const Header = (props) => {
         {props.data.city  ?
           <div className='header-text-container'>
             <p>Current temperature for :
-              <span className='city'>{props.data.city}: {props.data.temp_f}&#176;F</span>
+              <span className='city'>{props.data.city}: {props.data.temp_f}&#176;F</span> with {props.data.weather} skies. 
               <div className='time-container'>
                 Sunrise: {sunrise}, Sunset: {sunset}, Current Time: {now}  <p>{message}</p>
               </div>
