@@ -65,6 +65,7 @@ export default class PinExtended extends Component {
           {extendedForecast}
         </section>
         <button className='edit-btn'><Link to='/'>Back To Homepage</Link></button>
+        <button className='edit-btn'><Link to='/settings'>Edit Pinned Cities</Link></button>
       </div>
     )
   }
