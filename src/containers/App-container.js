@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     receiveForecast: (data) => {
       dispatch(receiveForecast(data))
     },
-    receiveExtForecast: (data, city) => {
+    receiveExtForecastApp: (data, city) => {
       dispatch(receiveExtForecastApp(data, city))
     }
   }
