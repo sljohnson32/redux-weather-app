@@ -5,13 +5,13 @@ import './header-style.css';
 
 const Header = (props) => {
   let icon = <img alt='time of day'/>
-  let now = moment().format('HH:mm:ss')
-  let sunrise = moment.parseZone(`${props.data.sunrise}`).local().format('HH:mm:ss')
+  let now = moment().format('hh:mm a')
+  let sunrise = moment.parseZone(`${props.data.sunrise}`).local().format('hh:mm a')
   console.log(sunrise);
-  let morning = moment(sunrise, 'HH:mm:ss').add(2, 'h').format('HH:mm:ss')
+  let morning = moment(sunrise, 'hh:mm a').add(2, 'h').format('hh:mm a')
   console.log(morning);
-  let sunset = moment.parseZone(`${props.data.sunset}`).local().format('HH:mm:ss')
-  let evening = moment(sunset, 'HH:mm:ss').subtract(2, 'h').format('HH:mm:ss')
+  let sunset = moment.parseZone(`${props.data.sunset}`).local().format('hh:mm a')
+  let evening = moment(sunset, 'hh:mm a').subtract(2, 'h').format('hh:mm a')
   let timeOfDay = {
     sunrise,
     morning,
