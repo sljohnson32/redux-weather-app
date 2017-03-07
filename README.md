@@ -1,4 +1,4 @@
-## School Finder
+## Weatherly
 #### A webbased application that uses React - Redux and an external API to a display weather forecasts for your current location (accessed via the browser) and up to three other "pinned" cities.
 
 ## Project Screen Shots
